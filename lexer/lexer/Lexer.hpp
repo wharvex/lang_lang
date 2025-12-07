@@ -13,6 +13,7 @@ public:
 
 private:
   std::vector<Token> tokens;
+  std::size_t line_count;
 };
 
 #endif
