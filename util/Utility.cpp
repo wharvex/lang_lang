@@ -13,7 +13,7 @@ std::size_t Utility::count_lines_simple(std::ifstream &in) {
     ++lines;
   }
 
-  // Reset stream state and position to the beginning for caller convenience.
+  // Reset stream state and position to the beginning.
   in.clear();
   in.seekg(0, std::ios::beg);
   return lines;

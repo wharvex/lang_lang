@@ -9,9 +9,9 @@ int main() {
   std::ifstream file("../program.lang");
   std::string line;
 
-  std::size_t line_count = Utility::count_lines_simple(file);
+  std::size_t lineCount = Utility::count_lines_simple(file);
 
-  Lexer lexer(line_count);
+  Lexer lexer(lineCount);
 
   while (std::getline(file, line)) {
     std::cout << line << std::endl;

@@ -2,17 +2,16 @@
 #define TOKEN_HPP
 
 #include "TokenType.h"
-#include <string>
 
 class Token {
 public:
-  Token(std::string text);
+  Token(char srcChar, TokenType tokenType);
   TokenType getTokenType();
-  std::string getText();
+  char getSrcChar();
 
 private:
   TokenType tokenType;
-  std::string text;
+  char srcChar;
 };
 
 #endif
