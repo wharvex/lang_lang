@@ -8,12 +8,12 @@
 
 class Lexer {
 public:
-  Lexer(std::size_t line_count);
+  Lexer(std::size_t lineCount);
   int lex(std::string line);
 
 private:
   std::vector<Token> tokens;
-  std::size_t line_count;
+  std::size_t lineCount;
 };
 
 #endif

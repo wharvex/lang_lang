@@ -2,4 +2,4 @@
 
 int Lexer::lex(std::string line) { return 0; }
 
-Lexer::Lexer(std::size_t line_count) { Lexer::line_count = line_count; }
+Lexer::Lexer(std::size_t lineCount) { Lexer::lineCount = lineCount; }

@@ -1,3 +1,6 @@
+#ifndef TOKENTYPE_H
+#define TOKENTYPE_H
+
 enum TokenType {
   SPACE,
   LETTER,
@@ -10,3 +13,5 @@ enum TokenType {
   SLASH,
   DOT
 };
+
+#endif
