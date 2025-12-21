@@ -6,7 +6,7 @@
 
 class Utility {
 public:
-  static std::size_t count_lines_simple(std::ifstream &in);
+  static std::size_t countLinesSimple(std::ifstream &in);
 };
 
 #endif

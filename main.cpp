@@ -9,15 +9,12 @@ int main() {
   std::ifstream file("../program.lang");
   std::string line;
 
-  std::size_t lineCount = Utility::count_lines_simple(file);
+  std::size_t lineCount = Utility::countLinesSimple(file);
 
-  Lexer lexer(lineCount);
+  Lexer lexer(lineCount, file);
 
-  while (std::getline(file, line)) {
-    std::cout << line << std::endl;
-    std::cout << "yo I'm in the loop" << std::endl;
-    std::cout << "lex output: " << lexer.lex(line) << std::endl;
-  }
+  lexer.lex();
+
   std::cout << "yo I'm outside the loop\n";
   return 0;
 }
