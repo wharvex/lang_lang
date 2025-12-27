@@ -1,6 +1,7 @@
 #include "Lexer.hpp"
 #include <cstddef>
 #include <iostream>
+#include <stdexcept>
 
 Lexer::Lexer(std::size_t lineCount, std::ifstream &file) : file(file) {
   Lexer::lineCount = lineCount;
@@ -36,20 +37,31 @@ Lexer::Lexer(std::size_t lineCount, std::ifstream &file) : file(file) {
   }
 }
 
+int Lexer::lex() {
+  std::string line;
+  while (std::getline(file, line)) {
+    std::cout << line << std::endl;
+    int lexRetVal = lex(line);
+    std::cout << "lex(string) return value: " << lexRetVal << std::endl;
+  }
+  return 0;
+}
+
 int Lexer::lex(std::string line) {
   for (size_t i = 0; i < line.length(); i++) {
-    lex(line[i]);
+    int lexRetVal = lex(line[i]);
+    std::cout << "lex(char) return value: " << lexRetVal << std::endl;
   }
 
   return 0;
 }
 
-int Lexer::lex() {
-  std::string line;
-  while (std::getline(file, line)) {
-    std::cout << line << std::endl;
-    std::cout << "yo I'm in the loop" << std::endl;
-    std::cout << "lex output: " << lex(line) << std::endl;
+int Lexer::lex(char lineChar) {
+  try {
+    auto val = Lexer::tokenTypeLookup.at(lineChar);
+  } catch (const std::out_of_range &oor) {
+    std::cerr << "Error: Key " << lineChar << " not found in map ("
+              << oor.what() << ")" << std::endl;
   }
   return 0;
 }

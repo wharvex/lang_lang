@@ -15,6 +15,6 @@ int main() {
 
   lexer.lex();
 
-  std::cout << "yo I'm outside the loop\n";
+  std::cout << "end of main" << std::endl;
   return 0;
 }
